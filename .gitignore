@@ -1,0 +1,13 @@
+#*.*
+*.*~
+recentf
+recentf~
+ac-comphist.dat
+.#dmenu-items
+dmenu-items
+projectile-bookmarks.eld
+
+eshell/
+elpa/
+transient/
+.python-environments/

@@ -1,0 +1,61 @@
+* Basic Personal Configuration
+** Change =Yes-OR-No= to =y-or-n=
+#+BEGIN_SRC emacs-lisp
+  (fset 'yes-or-no-p 'y-or-n-p)
+#+END_SRC
+** Remove Toolbar Mode, Scrollbar Mode, Menubar Mode 
+#+BEGIN_SRC emacs-lisp
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  (menu-bar-mode -1)
+#+END_SRC
+** Emasc Lisp code adding shortcut
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'org-structure-template-alist
+		   '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
+#+END_SRC
+** Config.org loading shortcut
+#+BEGIN_SRC emacs-lisp
+  (defun config-visit ()
+    (interactive)
+    (find-file "~/.emacs.d/config.org"))
+  (global-set-key (kbd "C-c e") 'config-visit)
+#+END_SRC
+** Reload emacs shortcut
+#+BEGIN_SRC emacs-lisp
+  (defun config-reload ()
+    "Reloads ~/.emacs.d/config.org at runtime"
+    (interactive)
+    (org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
+  (global-set-key (kbd "C-c r") 'config-reload)
+#+END_SRC
+* Org Mode
+** Org bullets
+#+BEGIN_SRC emacs-lisp
+  (use-package org-bullets
+    :ensure t
+    :config
+      (add-hook 'org-mode-hook (lambda () (org-bullets-mode))))
+#+END_SRC
+* Theme And Modeline
+** theme
+#+BEGIN_SRC emacs-lisp
+  (use-package zenburn-theme
+    :ensure t)
+#+END_SRC
+** Modeline
+#+BEGIN_SRC emacs-lisp
+  (use-package spaceline
+    :ensure t
+    :config
+    (require 'spaceline-config)
+    (spaceline-spacemacs-theme))
+#+END_SRC
+* Magit
+#+BEGIN_SRC emacs-lisp
+  (use-package magit
+      :ensure t
+      :init
+      (progn
+      (bind-key "C-x g" 'magit-status)))
+#+END_SRC
