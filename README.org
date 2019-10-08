@@ -14,7 +14,7 @@
 - Use Package
 ** Emacs Theme and Modeline
 - Zenburn 
-- Doom Modeline
+- spaceline
   - M-x all-the-icons-install-fonts 
 ** Emacs Package
 - Magit

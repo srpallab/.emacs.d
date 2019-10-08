@@ -52,6 +52,7 @@
     (spaceline-spacemacs-theme))
 #+END_SRC
 * Magit
+** Default magit package
 #+BEGIN_SRC emacs-lisp
   (use-package magit
       :ensure t
