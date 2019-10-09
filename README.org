@@ -23,3 +23,8 @@
 - Dashboard
 - Projectile
 - Yasnippet
+- Which key
+- Expand region
+- Swiper
+- Ivy
+- Counsel
