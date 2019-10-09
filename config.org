@@ -33,6 +33,17 @@
 #+BEGIN_SRC emacs-lisp
   (setq inhibit-startup-message t)
 #+END_SRC
+** Expand Region
+#+BEGIN_SRC emacs-lisp
+  (use-package expand-region
+    :ensure t
+    :config 
+    (global-set-key (kbd "C-=") 'er/expand-region))
+#+END_SRC
+** Add Default Browser
+#+BEGIN_SRC emacs-lisp
+  (setenv "BROWSER" "firefox")
+#+END_SRC
 * Org Mode
 ** Org bullets
 #+BEGIN_SRC emacs-lisp

@@ -20,6 +20,13 @@
 
 (setq inhibit-startup-message t)
 
+(use-package expand-region
+  :ensure t
+  :config 
+  (global-set-key (kbd "C-=") 'er/expand-region))
+
+(setenv "BROWSER" "firefox")
+
 (use-package org-bullets
   :ensure t
   :config
@@ -73,11 +80,6 @@
   :ensure t 
   :config
   (which-key-mode))
-
-(use-package expand-region
-  :ensure t
-  :config 
-  (global-set-key (kbd "C-=") 'er/expand-region))
 
 (use-package counsel
   :ensure t
