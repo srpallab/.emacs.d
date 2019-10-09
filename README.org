@@ -18,3 +18,8 @@
   - M-x all-the-icons-install-fonts 
 ** Emacs Package
 - Magit
+- Git Time Machine
+- Git Gutter
+- Dashboard
+- Projectile
+- Yasnippet

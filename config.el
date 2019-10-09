@@ -18,6 +18,8 @@
   (org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
 (global-set-key (kbd "C-c r") 'config-reload)
 
+(setq inhibit-startup-message t)
+
 (use-package org-bullets
   :ensure t
   :config
@@ -37,3 +39,32 @@
     :init
     (progn
     (bind-key "C-x g" 'magit-status)))
+(setq magit-status-margin
+  '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
+
+(use-package git-timemachine
+  :ensure t)
+(use-package git-gutter
+  :ensure t
+  :init
+  (global-git-gutter-mode +1))
+
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode 1)
+  (setq dashboard-items '((recents  . 5)
+			  (projects . 5)
+			  (agenda . 5))))
+
+(use-package yasnippet
+  :ensure t
+  :config
+    (use-package yasnippet-snippets
+      :ensure t)
+    (yas-reload-all))

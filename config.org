@@ -29,6 +29,10 @@
     (org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
   (global-set-key (kbd "C-c r") 'config-reload)
 #+END_SRC
+** Startup Screen
+#+BEGIN_SRC emacs-lisp
+  (setq inhibit-startup-message t)
+#+END_SRC
 * Org Mode
 ** Org bullets
 #+BEGIN_SRC emacs-lisp
@@ -59,4 +63,42 @@
       :init
       (progn
       (bind-key "C-x g" 'magit-status)))
+  (setq magit-status-margin
+    '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
+#+END_SRC
+** Git Time Machine and git gutter
+#+BEGIN_SRC emacs-lisp
+  (use-package git-timemachine
+    :ensure t)
+  (use-package git-gutter
+    :ensure t
+    :init
+    (global-git-gutter-mode +1))
+
+#+END_SRC
+* Dashboard
+#+BEGIN_SRC emacs-lisp
+  (use-package dashboard
+    :ensure t
+    :config
+    (dashboard-setup-startup-hook))
+#+END_SRC
+* Projectile
+#+BEGIN_SRC emacs-lisp
+  (use-package projectile
+    :ensure t
+    :init
+    (projectile-mode 1)
+    (setq dashboard-items '((recents  . 5)
+			    (projects . 5)
+			    (agenda . 5))))
+#+END_SRC
+* Yasnippet
+#+BEGIN_SRC emacs-lisp
+  (use-package yasnippet
+    :ensure t
+    :config
+      (use-package yasnippet-snippets
+	:ensure t)
+      (yas-reload-all))
 #+END_SRC
