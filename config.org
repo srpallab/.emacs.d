@@ -55,16 +55,16 @@
 * Theme And Modeline
 ** theme
 #+BEGIN_SRC emacs-lisp
-  (use-package zenburn-theme
-    :ensure t)
+  (use-package faff-theme
+  :ensure t
+  )
+(load-theme 'faff t)
 #+END_SRC
 ** Modeline
 #+BEGIN_SRC emacs-lisp
-  (use-package spaceline
-    :ensure t
-    :config
-    (require 'spaceline-config)
-    (spaceline-spacemacs-theme))
+  (use-package doom-modeline
+  :ensure t)
+(doom-modeline-init)
 #+END_SRC
 * Magit
 ** Default magit package
