@@ -32,14 +32,19 @@
   :config
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode))))
 
-(use-package zenburn-theme
-  :ensure t)
+(use-package zerodark-theme
+  :ensure t
+  :init
+    (load-theme 'zerodark t))
 
 (use-package spaceline
   :ensure t
   :config
   (require 'spaceline-config)
-  (spaceline-spacemacs-theme))
+    (setq spaceline-line-column-p nil)
+    (setq spaceline-line-p nil)
+    (setq powerline-default-separator (quote arrow))
+    (spaceline-spacemacs-theme))
 
 (use-package magit
     :ensure t

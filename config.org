@@ -55,16 +55,21 @@
 * Theme And Modeline
 ** theme
 #+BEGIN_SRC emacs-lisp
-  (use-package faff-theme
-  :ensure t
-  )
-(load-theme 'faff t)
+  (use-package zerodark-theme
+    :ensure t
+    :init
+      (load-theme 'zerodark t))
 #+END_SRC
 ** Modeline
 #+BEGIN_SRC emacs-lisp
-  (use-package doom-modeline
-  :ensure t)
-(doom-modeline-init)
+  (use-package spaceline
+    :ensure t
+    :config
+    (require 'spaceline-config)
+      (setq spaceline-line-column-p nil)
+      (setq spaceline-line-p nil)
+      (setq powerline-default-separator (quote arrow))
+      (spaceline-spacemacs-theme))
 #+END_SRC
 * Magit
 ** Default magit package
