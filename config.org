@@ -50,6 +50,11 @@
   (add-hook 'prog-mode-hook 'hl-line-mode)
 #+END_SRC
 * Org Mode
+** Basic
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'org-mode-hook 'turn-on-flyspell)
+  (add-hook 'org-mode-hook 'turn-on-auto-fill)
+#+END_SRC
 ** Org bullets
 #+BEGIN_SRC emacs-lisp
   (use-package org-bullets
@@ -57,7 +62,7 @@
     :config
       (add-hook 'org-mode-hook (lambda () (org-bullets-mode))))
 #+END_SRC
-* Theme And Modeline
+* Theme 
 ** theme
 #+BEGIN_SRC emacs-lisp
   (use-package zerodark-theme
@@ -65,7 +70,7 @@
     :init
       (load-theme 'zerodark t))
 #+END_SRC
-** Uncle Dave Theme Customization
+** Customization
 #+BEGIN_SRC emacs-lisp
   (let ((class '((class color) (min-colors 89)))
 	(default (if (true-color-p) "#abb2bf" "#afafaf"))
@@ -105,10 +110,10 @@
 	(diff-removed-refined-background (if (true-color-p) "#b33c49" "#b33c49"))
 	(diff-current-background (if (true-color-p) "#29457b" "#29457b"))
 	(diff-current-refined-background (if (true-color-p) "#4174ae" "#4174ae")))
-
+  
     (custom-theme-set-faces
      'zerodark
-
+   
      `(fancy-battery-charging ((,class (:background ,background-blue :height 1.0 :bold t))))
      `(fancy-battery-discharging ((,class (:background ,background-blue :height 1.0))))
      `(fancy-battery-critical ((,class (:background ,background-blue :height 1.0))))
@@ -164,7 +169,7 @@
      `(org-block-end-line ((,class (:background ,background-blue :foreground ,blue
 						:bold t :height 1.0))))))
 #+END_SRC
-** Modeline
+* Mode line
 #+BEGIN_SRC emacs-lisp
   (use-package spaceline
     :ensure t

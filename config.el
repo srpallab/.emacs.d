@@ -30,6 +30,9 @@
 (add-hook 'org-mode-hook 'hl-line-mode)
 (add-hook 'prog-mode-hook 'hl-line-mode)
 
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+
 (use-package org-bullets
   :ensure t
   :config
