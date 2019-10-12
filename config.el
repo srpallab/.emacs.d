@@ -258,3 +258,11 @@
   (add-to-list 'python-shell-completion-native-disabled-interpreters "jupyter")
   (when (load "flycheck" nil t)
     (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))))
+
+(use-package py-autopep8
+  :ensure t
+  :config
+  (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save))
+
+(use-package ein
+  :ensure t)

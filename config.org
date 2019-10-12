@@ -315,3 +315,16 @@
        (when (load "flycheck" nil t)
 	 (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))))
    #+END_SRC
+** Python auto pep8 
+   #+BEGIN_SRC emacs-lisp
+     (use-package py-autopep8
+       :ensure t
+       :config
+       (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save))
+   #+END_SRC
+** ein 
+   #+BEGIN_SRC emacs-lisp
+     (use-package ein
+       :ensure t)
+   #+END_SRC
+   

@@ -25,7 +25,7 @@
  '(elpy-rpc-virtualenv-path "/usr/local/bin/virtualenv")
  '(package-selected-packages
    (quote
-    (iedit flycheck elpy which-key yasnippet projectile dashboard magit org-bullets doom-themes doom-theme spaceline doom-modeline zenburn-theme use-package)))
+    (ein py-autopep8 iedit flycheck elpy which-key yasnippet projectile dashboard magit org-bullets doom-themes doom-theme spaceline doom-modeline zenburn-theme use-package)))
  '(python-shell-completion-native-disabled-interpreters (quote ("pypy")))
  '(python-shell-interpreter "python3"))
 (custom-set-faces

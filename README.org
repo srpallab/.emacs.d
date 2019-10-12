@@ -37,3 +37,5 @@
     - sudo pip3 install elpy rope jedi flake8 autopep8 yapf black virtualenv jupyter 
 - Flycheck
 - Iedit
+- py-autopep8
+- ein
