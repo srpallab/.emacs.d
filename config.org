@@ -218,9 +218,9 @@
   (use-package yasnippet
     :ensure t
     :config
-      (use-package yasnippet-snippets
-	:ensure t)
-      (yas-reload-all))
+    (use-package yasnippet-snippets
+      :ensure t)
+    (yas-reload-all))
 #+END_SRC
 * Which Key
 #+BEGIN_SRC emacs-lisp
@@ -264,3 +264,49 @@
       (setq ivy-display-style 'fancy)
       (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)))
 #+END_SRC
+* Fly Check
+#+BEGIN_SRC emacs-lisp
+  (use-package flycheck
+    :ensure t
+    :config
+    (global-flycheck-mode t))
+#+END_SRC
+* iedit
+#+BEGIN_SRC emacs-lisp
+  (use-package iedit
+    :ensure t)
+#+END_SRC
+* Company Mode
+#+BEGIN_SRC emacs-lisp
+  (use-package company
+    :ensure t
+    :config
+    (setq company-idle-delay 0)
+    (setq company-minimum-prefix-length 2)
+    (global-company-mode t))
+
+  (with-eval-after-load 'company
+    (define-key company-active-map (kbd "M-n") nil)
+    (define-key company-active-map (kbd "M-p") nil)
+    (define-key company-active-map (kbd "C-n") #'company-select-next)
+    (define-key company-active-map (kbd "C-p") #'company-select-previous)
+    (define-key company-active-map (kbd "SPC") #'company-abort))
+#+END_SRC
+* Python
+** Elpy
+   #+BEGIN_SRC emacs-lisp
+     (use-package elpy
+       :ensure t
+       :defer t
+       :bind (("C-c k" . yas-expand)
+	      ("C-c o" . iedit-mode))
+       :init
+       (advice-add 'python-mode :before 'elpy-enable)
+       :config
+       (setq python-shell-interpreter "jupyter"
+	     python-shell-interpreter-args "console --simple-prompt"
+	     python-shell-prompt-detect-failure-warning nil)
+       (add-to-list 'python-shell-completion-native-disabled-interpreters "jupyter")
+       (when (load "flycheck" nil t)
+	 (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))))
+   #+END_SRC

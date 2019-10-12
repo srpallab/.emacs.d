@@ -11,3 +11,4 @@ eshell/
 elpa/
 transient/
 .python-environments/
+elpy/

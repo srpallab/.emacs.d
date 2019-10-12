@@ -29,3 +29,11 @@
 - Swiper
 - Ivy
 - Counsel
+- Elpy Mode
+  - Installation
+    - sudo ln -s /usr/bin/pip3 /usr/bin/pip
+    - sudo pip3 install --update pip
+    - sudo pip3 install setuptools
+    - sudo pip3 install elpy rope jedi flake8 autopep8 yapf black virtualenv jupyter 
+- Flycheck
+- Iedit
