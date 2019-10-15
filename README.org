@@ -1,41 +1,42 @@
 * My Personal Emacs Setup
 ** OS 
-- Linux Mint 19.2
+   - Linux Mint 19.2
 ** OS Packages
-- Emacs 26.1 Build from source
-- sudo apt install i3 i3blocks i3lock dmenu acpi sysstat
+   - Emacs 26.1 Build from source
+   - sudo apt install i3 i3blocks i3lock dmenu acpi sysstat
 ** My Config Files 
-- init.el (Main Config File)
-- config.org (Secondary Config File)
+   - init.el (Main Config File)
+   - config.org (Secondary Config File)
 ** Emacs Packages Source 
-- Melpa (https://melpa.org/packages/)
-- Org (https://orgmode.org/elpa/)
+   - Melpa (https://melpa.org/packages/)
+   - Org (https://orgmode.org/elpa/)
 ** Pacakges Installer
-- Use Package
+   - Use Package
 ** Emacs Theme and Modeline
-- Zerodark 
-- spaceline
-  - M-x all-the-icons-install-fonts
-  - User Dave theme customization
-** Emacs Package
-- Magit
-- Git Time Machine
-- Git Gutter
-- Dashboard
-- Projectile
-- Yasnippet
-- Which key
-- Expand region
-- Swiper
-- Ivy
-- Counsel
-- Elpy Mode
-  - Installation
-    - sudo ln -s /usr/bin/pip3 /usr/bin/pip
-    - sudo pip3 install --update pip
-    - sudo pip3 install setuptools
-    - sudo pip3 install elpy rope jedi flake8 autopep8 yapf black virtualenv jupyter 
-- Flycheck
-- Iedit
-- py-autopep8
-- ein
+   - Zerodark 
+   - spaceline
+     - M-x all-the-icons-install-fonts
+     - User Dave theme customization
+** Emacs Package 
+   - Magit
+   - Git Time Machine
+   - Git Gutter
+   - Dashboard
+   - Projectile
+   - Yasnippet
+   - Which key
+   - Expand region
+   - Swiper
+   - Ivy
+   - Counsel
+   - Elpy Mode
+     - Installation
+       - sudo ln -s /usr/bin/pip3 /usr/bin/pip
+       - sudo pip3 install --update pip
+       - sudo pip3 install setuptools
+       - sudo pip3 install elpy rope jedi flake8 autopep8 yapf black virtualenv jupyter 
+   - Flycheck
+   - Iedit
+   - py-autopep8
+   - ein
+   - 
