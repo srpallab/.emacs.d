@@ -33,6 +33,9 @@
 (add-hook 'org-mode-hook 'turn-on-flyspell)
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
+(use-package htmlize
+  :ensure t)
+
 (use-package org-bullets
   :ensure t
   :config
@@ -182,6 +185,8 @@
   :config
   (use-package yasnippet-snippets
     :ensure t)
+  (use-package yasnippet-classic-snippets
+    :ensure t)
   (yas-reload-all))
 
 (use-package which-key
@@ -266,3 +271,55 @@
 
 (use-package ein
   :ensure t)
+
+(use-package origami
+  :ensure t)
+
+(use-package hungry-delete
+  :ensure t
+  :config
+  (global-hungry-delete-mode))
+
+(use-package aggressive-indent
+  :ensure t
+  :config
+  (global-aggressive-indent-mode 1))
+
+(use-package ace-window
+  :ensure t
+  :config
+  (setq aw-scope 'global)
+  (global-set-key (kbd "C-x 0") 'other-frame)
+  (global-set-key [remap other-window] 'ace-window))
+
+(use-package posframe
+  :ensure t)
+
+(use-package smartparens
+  :ensure t
+  :hook (prog-mode . smartparens-mode)
+  :custom
+  (sp-escape-quotes-after-insert nil)
+  :config
+  (require 'smartparens-config))
+(show-paren-mode t)
+
+(use-package multiple-cursors
+  :ensure t)
+
+(use-package web-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.vue?\\'" . web-mode))
+  (setq web-mode-engines-alist '(("django" . "\\.html\\'")))
+  (setq web-mode-enable-current-column-highlight t)
+  (setq web-mode-enable-auto-closing t)
+  (setq web-mode-enable-auto-quoting t))
+
+(use-package emmet-mode
+  :ensure t
+  :config
+  (add-hook 'sgml-mode-hook 'emmet-mode)
+  (add-hook 'web-mode-hook 'emmet-mode)
+  (add-hook 'css-mode-hook 'emmet-mode))

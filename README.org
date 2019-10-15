@@ -39,4 +39,13 @@
    - Iedit
    - py-autopep8
    - ein
-   - 
+   - htmlize
+   - origami
+   - hungry delete
+   - aggressive indent
+   - ace window
+   - posframe (update needed)
+   - smartparens
+   - multiple cursors
+   - web-mode
+   - emmet-mode
