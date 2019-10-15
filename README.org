@@ -49,3 +49,4 @@
    - multiple cursors
    - web-mode
    - emmet-mode
+   - diminish

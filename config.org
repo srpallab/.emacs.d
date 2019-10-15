@@ -406,3 +406,14 @@
       (add-hook 'web-mode-hook 'emmet-mode)
       (add-hook 'css-mode-hook 'emmet-mode))
   #+END_SRC
+* Diminish Mode
+  #+BEGIN_SRC emacs-lisp
+    (use-package diminish
+      :ensure t
+      :init
+      (diminish 'which-key-mode)
+      (diminish 'hungry-delete-mode)
+      (diminish 'company-mode)
+      (diminish 'git-gutter-mode)
+      )
+  #+END_SRC

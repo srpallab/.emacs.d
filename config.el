@@ -323,3 +323,12 @@
   (add-hook 'sgml-mode-hook 'emmet-mode)
   (add-hook 'web-mode-hook 'emmet-mode)
   (add-hook 'css-mode-hook 'emmet-mode))
+
+(use-package diminish
+  :ensure t
+  :init
+  (diminish 'which-key-mode)
+  (diminish 'hungry-delete-mode)
+  (diminish 'company-mode)
+  (diminish 'git-gutter-mode)
+  )
