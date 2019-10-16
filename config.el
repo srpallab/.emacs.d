@@ -32,6 +32,7 @@
 
 (add-hook 'org-mode-hook 'turn-on-flyspell)
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
+(add-hook 'org-mode-hook 'yas-minor-mode)
 
 (use-package htmlize
   :ensure t)
@@ -40,6 +41,14 @@
   :ensure t
   :config
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode))))
+
+;; active Org-babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(;; other Babel languages
+   (plantuml . t)))
+(setq org-plantuml-jar-path
+      (expand-file-name "~/.emacs.d/plantuml.jar"))
 
 (use-package zerodark-theme
   :ensure t

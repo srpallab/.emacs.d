@@ -52,8 +52,9 @@
 * Org Mode
 ** Basic
    #+BEGIN_SRC emacs-lisp
-  (add-hook 'org-mode-hook 'turn-on-flyspell)
-  (add-hook 'org-mode-hook 'turn-on-auto-fill)
+     (add-hook 'org-mode-hook 'turn-on-flyspell)
+     (add-hook 'org-mode-hook 'turn-on-auto-fill)
+     (add-hook 'org-mode-hook 'yas-minor-mode)
    #+END_SRC
 ** Org htmlize
    #+BEGIN_SRC emacs-lisp
@@ -66,6 +67,16 @@
     :ensure t
     :config
       (add-hook 'org-mode-hook (lambda () (org-bullets-mode))))
+   #+END_SRC
+** Org babel
+   #+BEGIN_SRC emacs-lisp
+     ;; active Org-babel languages
+     (org-babel-do-load-languages
+      'org-babel-load-languages
+      '(;; other Babel languages
+	(plantuml . t)))
+     (setq org-plantuml-jar-path
+	   (expand-file-name "~/.emacs.d/plantuml.jar"))
    #+END_SRC
 * Theme 
 ** theme
