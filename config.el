@@ -50,6 +50,9 @@
 (setq org-plantuml-jar-path
       (expand-file-name "~/.emacs.d/plantuml.jar"))
 
+(use-package plantuml-mode
+  :ensure t)
+
 (use-package zerodark-theme
   :ensure t
   :init

@@ -29,7 +29,7 @@
     (linum-relative origami ein py-autopep8 iedit flycheck elpy which-key yasnippet projectile dashboard magit org-bullets doom-themes doom-theme spaceline doom-modeline zenburn-theme use-package)))
  '(python-shell-completion-native-disabled-interpreters (quote ("pypy")))
  '(python-shell-interpreter "python3")
- '(sp-escape-quotes-after-insert nil))
+ '(sp-escape-quotes-after-insert nil t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

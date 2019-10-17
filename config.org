@@ -78,6 +78,11 @@
      (setq org-plantuml-jar-path
 	   (expand-file-name "~/.emacs.d/plantuml.jar"))
    #+END_SRC
+** UML Mode
+   #+BEGIN_SRC emacs-lisp
+     (use-package plantuml-mode
+       :ensure t)
+   #+END_SRC
 * Theme 
 ** theme
    #+BEGIN_SRC emacs-lisp

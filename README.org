@@ -54,3 +54,4 @@
      - babel language add
      - sudo apt install graphviz
    - linum relative
+   - plantuml
