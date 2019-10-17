@@ -50,3 +50,7 @@
    - web-mode
    - emmet-mode
    - diminish
+   - uml
+     - babel language add
+     - sudo apt install graphviz
+   - linum relative

@@ -428,3 +428,11 @@
       (diminish 'git-gutter-mode)
       )
   #+END_SRC
+* line number mode
+  #+BEGIN_SRC emacs-lisp
+    (use-package linum-relative
+      :ensure t
+      :config
+      (setq linum-relative-current-symbol "")
+      (add-hook 'prog-mode-hook 'linum-relative-mode))
+  #+END_SRC

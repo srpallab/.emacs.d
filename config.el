@@ -341,3 +341,9 @@
   (diminish 'company-mode)
   (diminish 'git-gutter-mode)
   )
+
+(use-package linum-relative
+  :ensure t
+  :config
+  (setq linum-relative-current-symbol "")
+  (add-hook 'prog-mode-hook 'linum-relative-mode))
