@@ -1,12 +1,13 @@
 #*.*
 *.*~
+.#*
 tramp
 recentf
 recentf~
 ac-comphist.dat
-.#dmenu-items
 dmenu-items
 projectile-bookmarks.eld
+session*
 
 eshell/
 elpa/
