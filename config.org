@@ -49,6 +49,29 @@
   (add-hook 'org-mode-hook 'hl-line-mode)
   (add-hook 'prog-mode-hook 'hl-line-mode)
    #+END_SRC
+* Magit
+** Default magit package
+   #+BEGIN_SRC emacs-lisp
+  (use-package magit
+      :ensure t
+      :init
+      (progn
+      (bind-key "C-x g" 'magit-status)))
+  (setq magit-status-margin
+    '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
+   #+END_SRC
+
+
+** Git Time Machine and git gutter
+   #+BEGIN_SRC emacs-lisp
+  (use-package git-timemachine
+    :ensure t)
+  (use-package git-gutter
+    :ensure t
+    :init
+    (global-git-gutter-mode +1))
+
+   #+END_SRC
 * Org Mode
 ** Basic
    #+BEGIN_SRC emacs-lisp
@@ -201,27 +224,6 @@
       (setq powerline-default-separator (quote arrow))
       (spaceline-spacemacs-theme))
   #+END_SRC
-* Magit
-** Default magit package
-   #+BEGIN_SRC emacs-lisp
-  (use-package magit
-      :ensure t
-      :init
-      (progn
-      (bind-key "C-x g" 'magit-status)))
-  (setq magit-status-margin
-    '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
-   #+END_SRC
-** Git Time Machine and git gutter
-   #+BEGIN_SRC emacs-lisp
-  (use-package git-timemachine
-    :ensure t)
-  (use-package git-gutter
-    :ensure t
-    :init
-    (global-git-gutter-mode +1))
-
-   #+END_SRC
 * Dashboard
   #+BEGIN_SRC emacs-lisp
   (use-package dashboard
@@ -248,7 +250,8 @@
 	:ensure t)
       (use-package yasnippet-classic-snippets
 	:ensure t)
-      (yas-reload-all))
+      (yas-reload-all)
+      (yas-global-mode t))
   #+END_SRC
 * Which Key
   #+BEGIN_SRC emacs-lisp

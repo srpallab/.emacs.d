@@ -30,6 +30,21 @@
 (add-hook 'org-mode-hook 'hl-line-mode)
 (add-hook 'prog-mode-hook 'hl-line-mode)
 
+(use-package magit
+    :ensure t
+    :init
+    (progn
+    (bind-key "C-x g" 'magit-status)))
+(setq magit-status-margin
+  '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
+
+(use-package git-timemachine
+  :ensure t)
+(use-package git-gutter
+  :ensure t
+  :init
+  (global-git-gutter-mode +1))
+
 (add-hook 'org-mode-hook 'turn-on-flyspell)
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 (add-hook 'org-mode-hook 'yas-minor-mode)
@@ -164,21 +179,6 @@
     (setq powerline-default-separator (quote arrow))
     (spaceline-spacemacs-theme))
 
-(use-package magit
-    :ensure t
-    :init
-    (progn
-    (bind-key "C-x g" 'magit-status)))
-(setq magit-status-margin
-  '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
-
-(use-package git-timemachine
-  :ensure t)
-(use-package git-gutter
-  :ensure t
-  :init
-  (global-git-gutter-mode +1))
-
 (use-package dashboard
   :ensure t
   :config
@@ -199,7 +199,8 @@
     :ensure t)
   (use-package yasnippet-classic-snippets
     :ensure t)
-  (yas-reload-all))
+  (yas-reload-all)
+  (yas-global-mode t))
 
 (use-package which-key
   :ensure t 
