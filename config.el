@@ -299,10 +299,7 @@
 
 (use-package ace-window
   :ensure t
-  :config
-  (setq aw-scope 'global)
-  (global-set-key (kbd "C-x 0") 'other-frame)
-  (global-set-key [remap other-window] 'ace-window))
+  :bind ("C-x o" . ace-window))
 
 (use-package posframe
   :ensure t)
