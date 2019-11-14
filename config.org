@@ -60,8 +60,6 @@
   (setq magit-status-margin
     '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 18))
    #+END_SRC
-
-
 ** Git Time Machine and git gutter
    #+BEGIN_SRC emacs-lisp
   (use-package git-timemachine
@@ -70,7 +68,6 @@
     :ensure t
     :init
     (global-git-gutter-mode +1))
-
    #+END_SRC
 * Org Mode
 ** Basic
